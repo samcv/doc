@@ -1010,7 +1010,7 @@ sub highlight-code-blocks(:$use-inline-python = True, :$use-highlights = False) 
             LEAVE try unlink $tmp_fname;
             my $command;
             if $use-highlights {
-                $command = "./highlights/node_modules/highlights/bin/highlights -i ./highlights/atom-language-perl6/package.json -s source.perl6fe -f ./highlights/atom-language-perl6/package.json < $tmp_fname"
+                $command = “./highlights/highlight-file.coffee "$tmp_fname"”
             }
             else {
                 $command = "pygmentize -l perl6 -f html < $tmp_fname";
